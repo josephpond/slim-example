@@ -75,19 +75,9 @@ php-di is used for DI.  The controller receives the repository via DI.
 
 ## Examples
 
-### Authentication not found
-```
-$ curl localhost:8001/
-{"error":"Not Authorized"}
-```
+### Endpoint examples
 
-### Invalid request
-```
-$ curl localhost:8001/?key=testkey
-{"error":"Not found."}
-```
-
-### Get inventory item by ID
+#### Get inventory item by ID
 ```
 $ curl localhost:8001/items/id/4?key=testkey
 {
@@ -98,7 +88,7 @@ $ curl localhost:8001/items/id/4?key=testkey
 }
 ```
 
-### Get inventory item by name
+#### Get inventory item by name
 ```
 $ curl localhost:8001/items/name/tomato?key=testkey
 {
@@ -109,7 +99,7 @@ $ curl localhost:8001/items/name/tomato?key=testkey
 }
 ```
 
-### Get list of organic items
+#### Get list of organic items
 ```
 $ curl localhost:8001/items/organic?key=testkey
 [
@@ -140,7 +130,7 @@ $ curl localhost:8001/items/organic?key=testkey
 ]
 ```
 
-### Get list items that are out of stock
+#### Get items that are out of stock
 ```
 $ curl localhost:8001/items/out-of-stock?key=testkey
 [
@@ -163,4 +153,18 @@ $ curl localhost:8001/items/out-of-stock?key=testkey
         "organic": false
     }
 ]
+```
+
+### Exception examples
+
+#### Authentication not found
+```
+$ curl localhost:8001/
+{"error":"Not Authorized"}
+```
+
+#### Invalid request
+```
+$ curl localhost:8001/?key=testkey
+{"error":"Not found."}
 ```
