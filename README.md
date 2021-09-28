@@ -49,7 +49,7 @@ Create Controller class(es) for the endpoints.
 #### Solution
 A controller was created at `src/Controller/InventoryController.php`
 
-Actions for each endpoint is defined as methods in the controller.
+Actions for each endpoint are defined as methods in the controller.
 
 --
 
