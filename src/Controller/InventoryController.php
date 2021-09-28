@@ -35,7 +35,7 @@ class InventoryController
     public function getItemAction(ServerRequestInterface $request, ResponseInterface $response, $id): ResponseInterface
     {
         // Generally we would set up some sort of validation system validate input here.
-        if (false === is_int($id)) {
+        if (false === is_numeric($id)) {
             throw new HttpBadRequestException($request, 'Integer expected.');
         }
         $item = $this->inventoryRepository->getItem($id);

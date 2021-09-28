@@ -25,6 +25,6 @@ class AuthenticationMiddleware implements MiddlewareInterface
         if (array_key_exists('key', $params) && sha1($params['key']) === self::KEY) {
             return $handler->handle($request);
         }
-        throw new HttpUnauthorizedException($request, 'Not Authorized');
+        throw new HttpUnauthorizedException($request, 'Not authorized');
     }
 }
