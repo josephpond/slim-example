@@ -17,6 +17,62 @@ Models, repositories, middleware, and controller are in `src/`
 
 The authentication requires a key, which currently is set to `testkey`.
 
+## Asks
+
+### Requirement
+An API using the Slim framework (PHP 7.4 or greater)
+
+#### Solution
+Project completed with PHP 8.0.9 and Slim 4.8.1
+
+--
+
+### Requirement
+Create a couple endpoints for fetching some dummy data (doesn't matter what)
+
+#### Solution
+The following endpoints were created.
+
+```
+/items/id/{id}
+/items/name/{name}
+/items/out-of-stock
+/items/organic
+```
+--
+
+### Requirement
+Create Controller class(es) for the endpoints.
+
+#### Solution
+A controller was created at `src/Controller/InventoryController.php`
+
+Actions for each endpoint is defined as methods in the controller.
+
+--
+
+### Requirement
+Create a repository interface and concrete class to use for fetching applicable data for endpoint(s). You don't need to use a DB connection they can simply use static data from an array. The return type from repository method(s) should a domain model for the entity you are returning. Include some logic in the repository class so that you can fetch different data based on criteria. For example if you have a method defined like getFooById(int $id) have a few data elements in there that would allow a user to pass a valid id and get back the appropriate data.
+
+#### Solution
+A repository interface is created.  A repository that gets data from a static array is made to implement the interface.  Several methods are created to retrieve data and return models.
+
+--
+
+### Requirement
+To secure the endpoint(s) assume there is a secret key passed in each request that gets verified, otherwise the user can not access the endpoint(s). You can create a static hash (and store it somewhere in the code for this). There should be a class that's responsible for taking the requestor's token and verifying that it is valid.
+
+#### Solution
+An authentication middleware is created that checks for a key, performs a sha1 on the key, then checks it against a statically defined hash.
+
+--
+
+### Requirement
+Set up/import a DI container in Slim to inject dependencies into the Controller(s)
+
+#### Solution
+php-di is used for DI.  The controller receives the repository via DI.
+
 ## Examples
 
 ### Authentication not found
