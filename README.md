@@ -140,7 +140,7 @@ $ curl localhost:8001/items/organic?key=testkey
 ]
 ```
 
-### Get items that are out of stock
+### Get list items that are out of stock
 ```
 $ curl localhost:8001/items/out-of-stock?key=testkey
 [
