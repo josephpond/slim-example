@@ -1,0 +1,22 @@
+{
+    "name": "agentis/example_api",
+    "description": "A simple example api",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Joseph Pond",
+            "email": "joseph.m.pond@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.5",
+        "php-di/php-di": "^6.3",
+        "php-di/slim-bridge": "^3.1"
+    }
+}
